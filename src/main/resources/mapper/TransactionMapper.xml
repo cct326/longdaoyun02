@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cct.longdaoyun02.mapper.TransactionsMapper">
+    <select id="findByItemName" parameterType="String" resultType="cct.longdaoyun02.entity.Transactions">
+        select id,item_number,item_name,company_name,transactions_time,offer_indate,
+        status,bargain_indate,bid_indate
+        from transactions
+        where item_name like CONCAT(CONCAT('%', #{keyword}), '%')
+    </select>
+    <select id="findByCompanyName" parameterType="String" resultType="cct.longdaoyun02.entity.Transactions">
+        select id,item_number,item_name,company_name,transactions_time,offer_indate,
+        status,bargain_indate,bid_indate
+        from transactions
+        where company_name like CONCAT(CONCAT('%', #{keyword}), '%')
+    </select>
+    <select id="findByItemNumber" parameterType="String" resultType="cct.longdaoyun02.entity.Transactions">
+        select id,item_number,item_name,company_name,transactions_time,offer_indate,
+        status,bargain_indate,bid_indate
+        from transactions
+        where item_number like CONCAT(CONCAT('%', #{keyword}), '%')
+    </select>
+    <resultMap id="myTrans" type="cct.longdaoyun02.entity.Transactions">
+        <id column="id" property="id"></id>
+        <result column="item_name" property="itemName"></result>
+        <result column="item_number" property="itemNumber"></result>
+        <result column="buyer_name" property="orders.buyerName"></result>
+        <result column="begin_time" property="beginTime"></result>
+        <result column="bid_type" property="bidType"></result>
+        <result column="bid_status" property="bidStatus"></result>
+    </resultMap>
+    <!--竞价交易显示-->
+    <select id="findByStatus" resultMap="myTrans">
+        select t.id,
+        t.`item_name`,
+        t.`item_number`,
+        o.`buyer_name`,
+        t.`begin_time`,
+        t.`bid_type`,
+        t.`bid_status`
+        from transactions t,orders o
+        where t.order_id = o.id
+        <if test="bidStatus1!=null and bidStatus2!=null">
+            and bid_status between #{bidStatus1} and #{bidStatus2}
+        </if>
+    </select>
+    <!--竞价交易搜索-->
+    <select id="findByTrans" resultMap="myTrans">
+        select t.id,
+        t.`item_name`,
+        t.`item_number`,
+        o.`buyer_name`,
+        t.`begin_time`,
+        t.`bid_type`,
+        t.`bid_status`
+        from transactions t,orders o
+        where t.order_id = o.id
+        and (item_name like CONCAT(CONCAT('%', #{keyword}), '%')
+        or item_number like CONCAT(CONCAT('%', #{keyword}), '%'))
+        <if test="bidStatus1!=null and bidStatus2!=null">
+            and bid_status between #{bidStatus1} and #{bidStatus2}
+        </if>
+        <if test="bidStatus!=null">
+            and bid_status = #{bidStatus}
+        </if>
+    </select>
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cct.longdaoyun02.mapper.OrdersMapper">
+    <select id="findAllByStatus" resultType="cct.longdaoyun02.entity.Orders" parameterType="integer">
+        select id,buyer_name,order_number,order_status,create_time,order_name,order_amount from orders
+        where order_status between #{param1} and #{param2}
+    </select>
+    <!--条件查询-->
+    <select id="findByOrders" resultType="cct.longdaoyun02.entity.Orders" >
+        select id,buyer_name,order_number,order_status,create_time,order_name,order_amount from orders
+        where 1=1
+        <if test="orderNumber!= null and orderNumber!=''">
+            and order_number = #{orderNumber}
+        </if>
+        <if test="buyerName!= null and buyerName!=''">
+            and buyer_name = #{buyerName}
+        </if>
+        <if test="orderStatus1!= null and orderStatus2!=null">
+            and order_status between #{orderStatus1} and #{orderStatus2}
+        </if>
+        <if test="createTimeBegin!=null and createTimeEnd!=null">
+            and create_time between #{createTimeBegin} and #{createTimeEnd}
+        </if>
+        <if test="orderStatus!=null">
+            and order_status = #{orderStatus}
+        </if>
+    </select>
+
+
+
+</mapper>

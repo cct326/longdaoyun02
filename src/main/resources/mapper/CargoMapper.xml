@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cct.longdaoyun02.mapper.CargoMapper">
+    <resultMap id="myCargo" type="cct.longdaoyun02.entity.Cargo">
+        <id column="id" property="id"/>
+        <result column="cargo_number" property="cargoNumber"></result>
+        <result column="order_name" property="orders.orderName"></result>
+        <result column="cargo_amount" property="cargoAmount"></result>
+        <result column="cargo_time" property="cargoTime"></result>
+        <result column="delivery_date" property="deliveryDate"></result>
+        <result column="buyer_name" property="orders.buyerName"></result>
+        <result column="cargo_status" property="cargoStatus"></result>
+    </resultMap>
+    <select id="findAllByStatus" resultMap="myCargo">
+        SELECT
+        c.id,
+        c.cargo_number,
+        o.order_name,
+        c.cargo_amount,
+        c.cargo_time,
+        c.delivery_date,o.buyer_name,
+        c.cargo_status
+        FROM cargo c,orders o
+      where o.id=c.`order_id`
+      and c.cargo_status between #{param1} and #{param2}
+    </select>
+    <select id="findAllByCargo" resultMap="myCargo">
+        SELECT
+        c.id,
+        c.cargo_number,
+        o.order_name,
+        c.cargo_amount,
+        c.cargo_time,
+        c.delivery_date,o.buyer_name,
+        c.cargo_status
+        FROM cargo c,orders o
+        where o.id=c.`order_id`
+        <if test="cargoNumber!=null and cargoNumber!=''">
+            and c.cargo_number = #{cargoNumber}
+        </if>
+        <if test="cargoTimeBegin!=null and cargoTimeEnd!=null">
+            and c.cargo_time between #{cargoTimeBegin} and #{cargoTimeEnd}
+        </if>
+        <if test="orderName!=null and orderName!=''">
+            and o.order_name = #{orderName}
+        </if>
+        <if test="buyerName!=null and buyerName!=''">
+            and o.buyer_name = #{buyerName}
+        </if>
+        <if test="cargoStatus1!=null and cargoStatus2!=null">
+            and c.cargo_status between #{cargoStatus1} and #{cargoStatus2}
+        </if>
+        <if test="cargoStatus!=null">
+            and c.cargo_status = #{cargoStatus}
+        </if>
+    </select>
+</mapper>

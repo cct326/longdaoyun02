@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="layui/css/layui.css" />
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<body>
+
+		<div class="layui-tab layui-tab-brief">
+			<ul class="layui-tab-title">
+				<li class="layui-this">全部</li>
+				<li>待办货单</li>
+				<li>执行货单</li>
+				<li>结束货单</li>
+			</ul>
+			<div class="layui-tab-content">
+				<div class="layui-tab-item layui-show">
+					<div class="layui-container">
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-col-md3">发布日期:<input name="cargoTimes"  type="text" id="time1"  placeholder="请选择日期"  class="layui-input" style="width: 150px;"></div>
+							<div class="layui-col-md3">货单编号：<input type="text" name="cargoNumber" placeholder="请输入货单编号" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">来源订单：<input type="text" name="orderName" placeholder="请输入来源订单" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">采购商：<input type="text" name="buyerName" placeholder="请输入采购商名称" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">货单状态：
+								<select name="cargoStatus" lay-verify="" style="width: 150px;">
+									<option value="" disabled="">请选择</option>
+									<option value="">全部</option>
+									<option value="1">备货中</option>
+									<option value="2">待收货</option>
+									<option value="3">已签收</option>
+									<option value="4">已拒收</option>
+									<option value="5">已终止</option>
+									<option value="6">已完成</option>
+								</select>
+							</div>
+							<div class="layui-col-md3 layui-col-md-offset7">
+									<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search1">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table1" lay-filter="table1"></table>
+				</div>
+				<div class="layui-tab-item">
+					<div class="layui-container">
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-col-md3">发布日期:<input  name="cargoTimes" type="text" id="time2"  placeholder="请选择日期"  class="layui-input" style="width: 150px;"></div>
+							<div class="layui-col-md3">货单编号：<input type="text" name="cargoNumber" placeholder="请输入货单编号" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">来源订单：<input type="text" name="orderName" placeholder="请输入来源订单" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">采购商：<input type="text" name="buyerName" placeholder="请输入采购商名称" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3 layui-col-md-offset12">
+									<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search2">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table2" lay-filter="table2"></table>
+				</div>
+				<div class="layui-tab-item">
+					<div class="layui-container">
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-col-md3">发布日期:<input name="cargoTimes"  type="text" id="time3"  placeholder="请选择日期"  class="layui-input" style="width: 150px;"></div>
+							<div class="layui-col-md3">货单编号：<input type="text" name="cargoNumber" placeholder="请输入货单编号" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">来源订单：<input type="text" name="orderName" placeholder="请输入来源订单" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">采购商：<input type="text" name="buyerName" placeholder="请输入采购商名称" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3 layui-col-md-offset12">
+									<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search3">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table3" lay-filter="table3"></table>
+				</div>
+				<div class="layui-tab-item">
+					<div class="layui-container">
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-col-md3">发布日期:<input  name="cargoTimes" type="text" id="time4"  placeholder="请选择日期"  class="layui-input" style="width: 150px;"></div>
+							<div class="layui-col-md3">货单编号：<input type="text" name="cargoNumber" placeholder="请输入货单编号" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">来源订单：<input type="text" name="orderName" placeholder="请输入来源订单" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">采购商：<input type="text" name="buyerName" placeholder="请输入采购商名称" autocomplete="off" class="layui-input" style="width: 200px;"></div>
+							<div class="layui-col-md3">货单状态：
+								<select name="cargoStatus" lay-verify="" style="width: 150px;">
+									<option value="" disabled="">请选择</option>
+									<option value="">全部</option>
+									<option value="1">备货中</option>
+									<option value="2">待收货</option>
+									<option value="3">已签收</option>
+									<option value="4">已拒收</option>
+									<option value="5">已终止</option>
+									<option value="6">已完成</option>
+								</select>
+							</div>
+							<div class="layui-col-md3 layui-col-md-offset7">
+									<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search4">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table4" lay-filter="table4"></table>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			//注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+			layui.use(['element','laypage','form','laydate','table'], function() {
+				var element = layui.element;
+				var laypage = layui.laypage;
+				var form = layui.form;
+				var laydate = layui.laydate;
+				var table = layui.table;
+			
+				//监听提交
+				form.on('submit(search1)', function(data) {
+					table.reload('tableOne',{
+						url:"/cargo/search/1"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							cargoNumber:data.field.cargoNumber
+							,orderName:data.field.orderName
+							,buyerName:data.field.buyerName
+							,cargoStatus:data.field.cargoStatus
+							,cargoTimes:data.field.cargoTimes
+						}
+						
+					})
+					return false;
+				});
+				form.on('submit(search2)', function(data) {
+					table.reload('tableTwo',{
+						url:"/cargo/search/2"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							cargoNumber:data.field.cargoNumber
+							,orderName:data.field.orderName
+							,buyerName:data.field.buyerName
+							,cargoTimes:data.field.cargoTimes
+						}
+						
+					})
+					return false;
+				});
+				form.on('submit(search3)', function(data) {
+					table.reload('tableThree',{
+						url:"/cargo/search/3"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							cargoNumber:data.field.cargoNumber
+							,orderName:data.field.orderName
+							,buyerName:data.field.buyerName
+							,cargoTimes:data.field.cargoTimes
+						}
+						
+					})
+					return false;
+				});
+				form.on('submit(search4)', function(data) {
+					table.reload('tableFour',{
+						url:"/cargo/search/4"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							cargoNumber:data.field.cargoNumber
+							,orderName:data.field.orderName
+							,buyerName:data.field.buyerName
+							,cargoStatus:data.field.cargoStatus
+							,cargoTimes:data.field.cargoTimes
+						}
+						
+					})
+					return false;
+				});
+				
+				laydate.render({
+					elem: '#time1' //指定元素
+					,type:'date'
+					,calendar: true
+					,range:"~"
+				});
+				laydate.render({
+					elem: '#time2' //指定元素
+					,type:'date'
+					,calendar: true
+					,range:"~"
+				});
+				laydate.render({
+					elem: '#time3' //指定元素
+					,type:'date'
+					,calendar: true
+					,range:"~"
+				});
+				laydate.render({
+					elem: '#time4' //指定元素
+					,type:'date'
+					,calendar: true
+					,range:"~"
+				});
+				
+				table.render({
+    				elem: '#table1'
+    				,height: 500
+    				,url: '/cargo/mycargo/1' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', width:100, align:'center',fixed: 'left'}
+      				,{field: 'cargoNumber', title: '货单编号',align:'center', width:230}
+      				,{field: 'orders.orderName', title: '来源订单', align:'center',width:230,templet:function (d){
+      				    		return d.orders.orderName
+							}}
+      				,{field: 'cargoAmount', title: '货单总额（元）',align:'center', width:200} 
+      				,{field: 'cargoTime', title: '货单发布日期', align:'center',width: 200}
+      				,{field: 'deliveryDate', title: '要求到货日期', align:'center',width: 200}
+      				,{field: 'orders.buyerName', title: '采购商', align:'center',width: 230,templet:function (d){
+                                return d.orders.buyerName
+                            }}
+      				,{field: 'cargoStatus', title: '货单状态', align:'center',width: 150,templet:function (d) {
+      							//货单状态 1备货中2待收货3已签收4已拒收5已终止6已完成
+      				    		if (d.cargoStatus===1){
+      				    		    return '备货中'
+								}
+                                if (d.cargoStatus===2){
+                                    return '待收货'
+                                }
+                                if (d.cargoStatus===3){
+                                    return '已签收'
+                                }
+                                if (d.cargoStatus===4){
+                                    return '已拒收'
+                                }
+                                if (d.cargoStatus===5){
+                                    return '已终止'
+                                }
+                                if (d.cargoStatus===6){
+                                    return '已完成'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableOne"
+  				});
+  				
+  				table.render({
+    				elem: '#table2'
+    				,height: 500
+    				,url: '/cargo/mycargo/2' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', align:'center',width:100, fixed: 'left'}
+      				,{field: 'cargoNumber', title: '货单编号', align:'center',width:230}
+      				,{field: 'orders.orderName', align:'center',title: '来源订单', width:230,templet:function (d){
+      				    		return d.orders.orderName
+							}}
+      				,{field: 'cargoAmount', title: '货单总额（元）',align:'center', width:200} 
+      				,{field: 'cargoTime', title: '货单发布日期', align:'center',width: 200}
+      				,{field: 'deliveryDate', title: '要求到货日期', align:'center',width: 200}
+      				,{field: 'orders.buyerName', title: '采购商', align:'center',width: 230,templet:function (d){
+                                return d.orders.buyerName
+                            }}
+      				,{field: 'cargoStatus', title: '货单状态', align:'center',width: 150,templet:function (d) {
+      							//货单状态 1备货中2待收货3已签收4已拒收5已终止6已完成
+      				    		if (d.cargoStatus===1){
+      				    		    return '备货中'
+								}
+                                if (d.cargoStatus===2){
+                                    return '待收货'
+                                }
+                                if (d.cargoStatus===3){
+                                    return '已签收'
+                                }
+                                if (d.cargoStatus===4){
+                                    return '已拒收'
+                                }
+                                if (d.cargoStatus===5){
+                                    return '已终止'
+                                }
+                                if (d.cargoStatus===6){
+                                    return '已完成'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableTwo"
+  				});
+  				table.render({
+    				elem: '#table3'
+    				,height: 500
+    				,url: '/cargo/mycargo/3' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', width:100, align:'center',fixed: 'left'}
+      				,{field: 'cargoNumber', title: '货单编号', align:'center',width:230}
+      				,{field: 'orders.orderName', title: '来源订单', align:'center',width:230,templet:function (d){
+      				    		return d.orders.orderName
+							}}
+      				,{field: 'cargoAmount', title: '货单总额（元）', align:'center',width:200} 
+      				,{field: 'cargoTime', title: '货单发布日期', align:'center',width: 200}
+      				,{field: 'deliveryDate', title: '要求到货日期', align:'center',width: 200}
+      				,{field: 'orders.buyerName', title: '采购商', align:'center',width: 230,templet:function (d){
+                                return d.orders.buyerName
+                            }}
+      				,{field: 'cargoStatus', title: '货单状态', align:'center',width: 150,templet:function (d) {
+      							//货单状态 1备货中2待收货3已签收4已拒收5已终止6已完成
+      				    		if (d.cargoStatus===1){
+      				    		    return '备货中'
+								}
+                                if (d.cargoStatus===2){
+                                    return '待收货'
+                                }
+                                if (d.cargoStatus===3){
+                                    return '已签收'
+                                }
+                                if (d.cargoStatus===4){
+                                    return '已拒收'
+                                }
+                                if (d.cargoStatus===5){
+                                    return '已终止'
+                                }
+                                if (d.cargoStatus===6){
+                                    return '已完成'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableThree"
+  				});
+  				
+  				table.render({
+    				elem: '#table4'
+    				,height: 500
+    				,url: '/cargo/mycargo/4' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', width:100, align:'center',fixed: 'left'}
+      				,{field: 'cargoNumber', title: '货单编号', align:'center',width:230}
+      				,{field: 'orders.orderName', title: '来源订单', align:'center',width:230,templet:function (d){
+      				    		return d.orders.orderName
+							}}
+      				,{field: 'cargoAmount', title: '货单总额（元）', align:'center',width:200} 
+      				,{field: 'cargoTime', title: '货单发布日期', align:'center',width: 200}
+      				,{field: 'deliveryDate', title: '要求到货日期', align:'center',width: 200}
+      				,{field: 'orders.buyerName', title: '采购商', align:'center',width: 230,templet:function (d){
+                                return d.orders.buyerName
+                            }}
+      				,{field: 'cargoStatus', title: '货单状态', align:'center',width: 150,templet:function (d) {
+      							//货单状态 1备货中2待收货3已签收4已拒收5已终止6已完成
+      				    		if (d.cargoStatus===1){
+      				    		    return '备货中'
+								}
+                                if (d.cargoStatus===2){
+                                    return '待收货'
+                                }
+                                if (d.cargoStatus===3){
+                                    return '已签收'
+                                }
+                                if (d.cargoStatus===4){
+                                    return '已拒收'
+                                }
+                                if (d.cargoStatus===5){
+                                    return '已终止'
+                                }
+                                if (d.cargoStatus===6){
+                                    return '已完成'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableFour"
+  				});
+
+			});
+		</script>
+		
+		
+		
+	</body>
+
+</html>
