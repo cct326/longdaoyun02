@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="layui/css/layui.css" />
+		<script type="text/javascript" src="layui/layui.js"></script>
+	</head>
+	<body>
+		<div class="layui-tab layui-tab-brief">
+			<ul class="layui-tab-title">
+				<li class="layui-this">全部</li>
+				<li>待竞价</li>
+				<li>竞价中</li>
+				<li>评标中</li>
+				<li>已完成竞价</li>
+				<li>已撤销竞价</li>
+			</ul>
+			<div class="layui-tab-content">
+				<div class="layui-tab-item layui-show">
+					<div class="layui-container">
+
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-input-block layui-col-md3">
+								关键字:
+								<input type="text" name="keyword" placeholder="可按照项目名称、项目编号进行搜索" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-col-md3 layui-col-md-offset1">
+								竞价状态：
+								<select name="bidStatus" lay-verify="" style="width: 150px;height: 30px;">
+									<option value="">全部</option>
+									<option value="1">待竞价</option>
+									<option value="2">竞价中</option>
+									<option value="3">评标中</option>
+									<option value="4">未中标</option>
+									<option value="5">已中标</option>
+									<option value="6">已撤项</option>
+								</select>
+							</div>
+							<div class="layui-col-md3">
+								<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search1">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+							</div>
+							</form>
+						</div>
+
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table1" lay-filter="table1"></table>
+				</div>
+				<div class="layui-tab-item">
+					<div class="layui-container">
+
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-input-block layui-col-md3">
+								关键字:
+								<input type="text" name="keyword" placeholder="可按照项目名称、项目编号进行搜索" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-col-md3">
+								<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search2">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+							</div>
+							</form>
+						</div>
+
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table2" lay-filter="table2"></table>
+				</div>
+				<div class="layui-tab-item">
+					<div class="layui-container">
+
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-input-block layui-col-md3">
+								关键字:
+								<input type="text" name="keyword" placeholder="可按照项目名称、项目编号进行搜索" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-col-md3">
+								<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search3">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+							</div>
+							</form>
+						</div>
+
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table3" lay-filter="table3"></table>
+				</div>
+					<div class="layui-tab-item">
+					<div class="layui-container">
+
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-input-block layui-col-md3">
+								关键字:
+								<input type="text" name="keyword" placeholder="可按照项目名称、项目编号进行搜索" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-col-md3">
+								<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search4">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+							</div>
+							</form>
+						</div>
+
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table4" lay-filter="table4"></table>
+				</div>
+					<div class="layui-tab-item">
+					<div class="layui-container">
+
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-input-block layui-col-md3">
+								关键字:
+								<input type="text" name="keyword" placeholder="可按照项目名称、项目编号进行搜索" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-col-md3 layui-col-md-offset1">
+								竞价状态：
+								<select name="bidStatus" lay-verify="" style="width: 150px;height: 30px;">
+									<option value="">全部</option>
+									<option value="4">未中标</option>
+									<option value="5">已中标</option>
+								</select>
+							</div>
+							<div class="layui-col-md3">
+								<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search5">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+							</div>
+							</form>
+						</div>
+
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table5" lay-filter="table5"></table>
+				</div>
+				<div class="layui-tab-item">
+					<div class="layui-container">
+
+						<div class="layui-row layui-col-space20">
+							<form action="" method="post" class="layui-form">
+							<div class="layui-input-block layui-col-md3">
+								关键字:
+								<input type="text" name="keyword" placeholder="可按照项目名称、项目编号进行搜索" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-col-md3 layui-col-md-offset1">
+								竞价状态：
+								<select name="bidStatus" lay-verify="" style="width: 150px;height: 30px;">
+									<option value="">全部</option>
+									<option value="1">待竞价</option>
+									<option value="3">评标中</option>
+								</select>
+							</div>
+							<div class="layui-col-md3">
+								<div class="layui-form-item">
+									<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="search6">
+								<i class="layui-icon layui-icon-search" style="font-size: 20px; color: &#xe615;"></i>搜索</a>
+								</div>
+								</div>
+							</div>
+							</form>
+						</div>
+
+					</div>
+					<br>
+					<hr class="layui-bg-black">
+					<table id="table6" lay-filter="table6"></table>
+				</div>
+			</div>
+		</div>
+		
+
+		<script>
+			//注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+			layui.use(['element','laypage','form','table'], function() {
+				var element = layui.element;
+				var laypage = layui.laypage;
+				var form = layui.form;
+				var table = layui.table;
+				//监听提交
+				form.on('submit(search1)', function(data) {
+					table.reload('tableOne',{
+						url:"/bidding/search/1"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							keyword:data.field.keyword
+							,bidStatus:data.field.bidStatus
+							
+						}
+						
+					})
+					return false;
+				});
+				form.on('submit(search2)', function(data) {
+					table.reload('tableTwo',{
+						url:"/bidding/search/2"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							keyword:data.field.keyword
+							,bidStatus:data.field.bidStatus
+							
+						}
+						
+					})
+					return false;
+				});
+				form.on('submit(search3)', function(data) {
+					table.reload('tableThree',{
+						url:"/bidding/search/3"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							keyword:data.field.keyword
+							,bidStatus:data.field.bidStatus
+							
+						}
+						
+					})
+					return false;
+				});
+				form.on('submit(search4)', function(data) {
+					table.reload('tableFour',{
+						url:"/bidding/search/4"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							keyword:data.field.keyword
+							,bidStatus:data.field.bidStatus
+							
+						}
+						
+					})
+					return false;
+				});
+				form.on('submit(search5)', function(data) {
+					table.reload('tableFive',{
+						url:"/bidding/search/5"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							keyword:data.field.keyword
+							,bidStatus:data.field.bidStatus
+						}
+					})
+					return false;
+				});
+				form.on('submit(search6)', function(data) {
+					table.reload('tableSix',{
+						url:"/bidding/search/6"
+						,height:500
+						,limit:10
+						,page:true
+						,where:{
+							keyword:data.field.keyword
+							,bidStatus:data.field.bidStatus
+						}
+					})
+					return false;
+				});
+				
+				
+				table.render({
+    				elem: '#table1'
+    				,height: 500
+    				,url: '/bidding/mybidding/1' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', width:120,align:'center', fixed: 'left'}
+      				,{field: 'itemName', title: '项目名称', align:'center',width:250}
+      				,{field: 'itemNumber', title: '项目编号', align:'center',width:250}
+      				,{field: 'buyerName', title: '采购商',align:'center', width:250,templet:function (d){
+      					return d.orders.buyerName
+      				}}
+      				,{field: 'beginTime', title: '竞价开始时间', align:'center',width: 270}
+      				,{field: 'bidType', title: '项目类型', align:'center',width: 240}
+      				,{field: 'bidStatus', title: '当前状态', align:'center',width: 200,templet:function (d) {
+      							//竞价状态1待竞价2竞价中3评标中4未中标5已中标6已撤项
+      				    		if (d.bidStatus===1){
+      				    		    return '待竞价'
+								}
+                                if (d.bidStatus===2){
+                                    return '竞价中'
+                                }
+                                if (d.bidStatus===3){
+                                    return '评标中'
+                                }
+                                if (d.bidStatus===4){
+                                    return '未中标'
+                                }
+                                if (d.bidStatus===5){
+                                    return '已中标'
+                                }
+                                if (d.bidStatus===6){
+                                    return '已撤项'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableOne"
+  				});
+  				
+  				table.render({
+    				elem: '#table2'
+    				,height: 500
+    				,url: '/bidding/mybidding/2' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', width:120, align:'center',fixed: 'left'}
+      				,{field: 'itemName', title: '项目名称', align:'center',width:250}
+      				,{field: 'itemNumber', title: '项目编号', align:'center',width:250}
+      				,{field: 'buyerName', title: '采购商', align:'center',width:250,templet:function (d){
+      					return d.orders.buyerName
+      				}}
+      				,{field: 'beginTime', title: '竞价开始时间', align:'center',width: 270}
+      				,{field: 'bidType', title: '项目类型', align:'center',width: 240}
+      				,{field: 'bidStatus', title: '当前状态', align:'center',width: 200,templet:function (d) {
+      							//竞价状态1待竞价2竞价中3评标中4未中标5已中标6已撤项
+      				    		if (d.bidStatus===1){
+      				    		    return '待竞价'
+								}
+                                if (d.bidStatus===2){
+                                    return '竞价中'
+                                }
+                                if (d.bidStatus===3){
+                                    return '评标中'
+                                }
+                                if (d.bidStatus===4){
+                                    return '未中标'
+                                }
+                                if (d.bidStatus===5){
+                                    return '已中标'
+                                }
+                                if (d.bidStatus===6){
+                                    return '已撤项'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableTwo"
+  				});
+  				
+  				table.render({
+    				elem: '#table3'
+    				,height: 500
+    				,url: '/bidding/mybidding/3' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', align:'center',width:120, fixed: 'left'}
+      				,{field: 'itemName', align:'center',title: '项目名称', width:250}
+      				,{field: 'itemNumber', title: '项目编号',align:'center', width:250}
+      				,{field: 'orders.buyerName', title: '采购商', align:'center',width:250,templet:function (d){
+      					return d.orders.buyerName
+      				}}
+      				,{field: 'beginTime', title: '竞价开始时间', align:'center',width: 270}
+      				,{field: 'bidType', title: '项目类型', align:'center',width: 240}
+      				,{field: 'bidStatus', title: '当前状态', align:'center',width: 200,templet:function (d) {
+      							//竞价状态1待竞价2竞价中3评标中4未中标5已中标6已撤项
+      				    		if (d.bidStatus===1){
+      				    		    return '待竞价'
+								}
+                                if (d.bidStatus===2){
+                                    return '竞价中'
+                                }
+                                if (d.bidStatus===3){
+                                    return '评标中'
+                                }
+                                if (d.bidStatus===4){
+                                    return '未中标'
+                                }
+                                if (d.bidStatus===5){
+                                    return '已中标'
+                                }
+                                if (d.bidStatus===6){
+                                    return '已撤项'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableThree"
+  				});
+  				
+  				table.render({
+    				elem: '#table4'
+    				,height: 500
+    				,url: '/bidding/mybidding/4' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', width:120, align:'center',fixed: 'left'}
+      				,{field: 'itemName', title: '项目名称', align:'center',width:250}
+      				,{field: 'itemNumber', title: '项目编号', align:'center',width:250}
+      				,{field: 'orders.buyerName', title: '采购商', align:'center',width:250,templet:function (d){
+      					return d.orders.buyerName
+      				}}
+      				,{field: 'beginTime', title: '竞价开始时间', align:'center',width: 270}
+      				,{field: 'bidType', title: '项目类型', align:'center',width: 240}
+      				,{field: 'bidStatus', title: '当前状态', align:'center',width: 200,templet:function (d) {
+      							//竞价状态1待竞价2竞价中3评标中4未中标5已中标6已撤项
+      				    		if (d.bidStatus===1){
+      				    		    return '待竞价'
+								}
+                                if (d.bidStatus===2){
+                                    return '竞价中'
+                                }
+                                if (d.bidStatus===3){
+                                    return '评标中'
+                                }
+                                if (d.bidStatus===4){
+                                    return '未中标'
+                                }
+                                if (d.bidStatus===5){
+                                    return '已中标'
+                                }
+                                if (d.bidStatus===6){
+                                    return '已撤项'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableFour"
+  				});
+  				
+  				table.render({
+    				elem: '#table5'
+    				,height: 500
+    				,url: '/bidding/mybidding/5' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', width:120, align:'center',fixed: 'left'}
+      				,{field: 'itemName', title: '项目名称', align:'center',width:250}
+      				,{field: 'itemNumber', title: '项目编号', align:'center',width:250}
+      				,{field: 'orders.buyerName', title: '采购商', align:'center',width:250,templet:function (d){
+      					return d.orders.buyerName
+      				}}
+      				,{field: 'beginTime', title: '竞价开始时间', align:'center',width: 270}
+      				,{field: 'bidType', title: '项目类型', align:'center',width: 240}
+      				,{field: 'bidStatus', title: '当前状态', align:'center',width: 200,templet:function (d) {
+      							//竞价状态1待竞价2竞价中3评标中4未中标5已中标6已撤项
+      				    		if (d.bidStatus===1){
+      				    		    return '待竞价'
+								}
+                                if (d.bidStatus===2){
+                                    return '竞价中'
+                                }
+                                if (d.bidStatus===3){
+                                    return '评标中'
+                                }
+                                if (d.bidStatus===4){
+                                    return '未中标'
+                                }
+                                if (d.bidStatus===5){
+                                    return '已中标'
+                                }
+                                if (d.bidStatus===6){
+                                    return '已撤项'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableFive"
+  				});
+  				
+  				table.render({
+    				elem: '#table6'
+    				,height: 500
+    				,url: '/bidding/mybidding/6' //数据接口
+    				,page: true //开启分页
+    				,limit:10
+    				,method:"post"
+    				,text:{
+    					none:"暂无相关数据"
+    				}
+    				,cols: [[ //表头
+      				 {field: 'id', title: '序号', width:120, align:'center',fixed: 'left'}
+      				,{field: 'itemName', title: '项目名称', align:'center',width:250}
+      				,{field: 'itemNumber', title: '项目编号', align:'center',width:250}
+      				,{field: 'buyerName', title: '采购商', align:'center',width:250,templet:function (d){
+      					return d.orders.buyerName
+      				}}
+      				,{field: 'beginTime', title: '竞价开始时间',align:'center', width: 270}
+      				,{field: 'bidType', title: '项目类型', align:'center',width: 240}
+      				,{field: 'bidStatus', title: '当前状态', align:'center',width: 200,templet:function (d) {
+      							//竞价状态1待竞价2竞价中3评标中4未中标5已中标6已撤项
+      				    		if (d.bidStatus===1){
+      				    		    return '待竞价'
+								}
+                                if (d.bidStatus===2){
+                                    return '竞价中'
+                                }
+                                if (d.bidStatus===3){
+                                    return '评标中'
+                                }
+                                if (d.bidStatus===4){
+                                    return '未中标'
+                                }
+                                if (d.bidStatus===5){
+                                    return '已中标'
+                                }
+                                if (d.bidStatus===6){
+                                    return '已撤项'
+                                }
+
+
+                            }}
+      				,{field: 'do', title: '操作',align:'center',fixed: 'right'}
+    				]]
+    				,id:"tableSix"
+  				});
+			});
+		</script>
+	</body>
+</html>
