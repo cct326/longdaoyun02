@@ -16,6 +16,7 @@ public class BiddingController {
        return transactionsService.myBidding(status,page,limit);
    }
 
+    //注释
     @PostMapping("/search/{status}")
     public LayuiResponse search(@PathVariable("status") Integer status,Integer page,Integer limit,
                                 @RequestParam(defaultValue = "")String keyword,Integer bidStatus){
