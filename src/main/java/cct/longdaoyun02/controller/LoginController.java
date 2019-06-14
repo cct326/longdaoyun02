@@ -32,6 +32,10 @@ public class LoginController {
     public String loginURI(){
         return "/layui/login.html";
     }
+    @GetMapping("/log")
+    public String log(){
+        return "/layui/login.html";
+    }
 
 
 
