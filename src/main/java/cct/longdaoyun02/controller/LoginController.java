@@ -32,6 +32,10 @@ public class LoginController {
     public String loginURI(){
         return "/layui/login.html";
     }
+    
+    public String haha(){
+        
+    }
 
 
 
